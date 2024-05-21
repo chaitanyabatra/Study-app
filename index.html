@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="counter-container">
+        <div id="counter">0</div>
+        <button id="increment-btn">Increment</button>
+        <div id="total-solved">Total questions solved till now: 0</div>
+    </div>
+
+    <div id="timetable-container">
+        <h2>Timetable</h2>
+        <table id="timetable">
+            <tr>
+                <th>Time</th>
+                <th>Subject</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td contenteditable="true">08:00 - 09:00</td>
+                <td contenteditable="true">Math</td>
+                <td><button class="delete-row">Delete</button></td>
+            </tr>
+            <tr>
+                <td contenteditable="true">09:00 - 10:00</td>
+                <td contenteditable="true">Science</td>
+                <td><button class="delete-row">Delete</button></td>
+            </tr>
+            <!-- Initial rows -->
+        </table>
+        <button id="add-row">Add Row</button>
+        <button id="save-timetable">Save Timetable</button>
+    </div>
+
+    <div id="timer-container">
+        <h2>Study Timer</h2>
+        <div id="timer">00:00:00</div>
+        <button id="start-timer">Start Timer</button>
+        <button id="reset-timer">Reset Timer</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: #2edcce;
+}
+
+#counter-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#counter {
+    font-size: 48px;
+    margin-bottom: 20px;
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#increment-btn, #save-timetable, #add-row, #start-timer, #reset-timer {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#total-solved {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#timetable-container, #timer-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+td[contenteditable="true"] {
+    background-color: #fffbe6;
+}
+
+#timer {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.delete-row {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
