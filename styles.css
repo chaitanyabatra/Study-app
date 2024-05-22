@@ -3,7 +3,12 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
-    background-color: #2edcce;
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+    background-size: cover;
+    color: #fffdfd;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: relative;
 }
 
 #counter-container {
@@ -15,6 +20,7 @@ body {
     font-size: 48px;
     margin-bottom: 20px;
     background-color: yellow;
+    color: #030202;
     padding: 20px;
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -25,16 +31,25 @@ body {
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 #total-solved {
     font-size: 24px;
     margin-top: 20px;
+    color: #030202;
+
 }
 
 #timetable-container, #timer-container {
     margin-top: 20px;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 table {
@@ -44,13 +59,14 @@ table {
 }
 
 th, td {
-    border: 1px solid #000;
+    border: 1px solid #fff;
     padding: 10px;
     text-align: center;
 }
 
 td[contenteditable="true"] {
     background-color: #fffbe6;
+    color: #000;
 }
 
 #timer {
@@ -66,4 +82,21 @@ td[contenteditable="true"] {
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 5px;
+}
+
+#youtube-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#youtube-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
