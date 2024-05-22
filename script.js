@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
             counterElement.textContent = 'Congratulations! You did it!';
             counterElement.style.backgroundColor = 'red';
             document.body.style.backgroundColor = 'orange';  // Change background color of the whole page
-            incrementButton.disabled = false;  // Disable the button after reaching 40
+            incrementButton.disabled = true;  // Disable the button after reaching 40
         }
 
         if (count === 50) {
             counterElement.textContent = 'Congratulations! You did it!';
             counterElement.style.backgroundColor = 'orange';
             document.body.style.backgroundColor = 'pink';  // Change background color of the whole page
-            incrementButton.disabled = false;  // Disable the button after reaching 40
+            incrementButton.disabled = true;  // Disable the button after reaching 40
         }
 
         totalSolved++;
@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addRowButton.addEventListener('click', () => {
         const newRow = timetable.insertRow();
+        newRow.draggable = true;
         const timeCell = newRow.insertCell(0);
         const subjectCell = newRow.insertCell(1);
         const actionCell = newRow.insertCell(2);
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 timetable.rows[index + 1].cells[1].textContent = entry.subject;
             } else {
                 const newRow = timetable.insertRow();
+                newRow.draggable = true;
                 const timeCell = newRow.insertCell(0);
                 const subjectCell = newRow.insertCell(1);
                 const actionCell = newRow.insertCell(2);
@@ -109,4 +111,33 @@ document.addEventListener('DOMContentLoaded', () => {
         timerSeconds = 0;
         timerElement.textContent = '00:00:00';
     });
+
+    const backgroundMusic = document.getElementById('background-music');
+    backgroundMusic.play();
+
+    // Drag and Drop functionality
+    let draggedRow;
+    timetable.addEventListener('dragstart', (event) => {
+        draggedRow = event.target;
+        event.target.style.opacity = 0.5;
+    });
+
+    timetable.addEventListener('dragend', (event) => {
+        event.target.style.opacity = '';
+    });
+
+    timetable.addEventListener('dragover', (event) => {
+        event.preventDefault();
+    });
+
+    timetable.addEventListener('drop', (event) => {
+        event.preventDefault();
+        if (event.target.tagName === 'TD') {
+            const targetRow = event.target.parentNode;
+            if (targetRow !== draggedRow) {
+                timetable.insertBefore(draggedRow, targetRow.nextSibling);
+            }
+        }
+    });
 });
+
